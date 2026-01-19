@@ -4,9 +4,15 @@ import { createAdminClient } from "@/lib/supabase/server-admin"
 export async function POST(request: Request) {
   try {
     // Debug: Check if required env vars are set
+    console.log("[v0] SUPABASE_SERVICE_ROLE_KEY set:", !!process.env.SUPABASE_SERVICE_ROLE_KEY)
+    console.log("[v0] NEXT_PUBLIC_SUPABASE_URL set:", !!process.env.NEXT_PUBLIC_SUPABASE_URL)
+    
     if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.error("[v0] Missing SUPABASE_SERVICE_ROLE_KEY environment variable")
-      return NextResponse.json({ error: "Server configuration error: missing credentials" }, { status: 500 })
+      return NextResponse.json({ error: "Server configuration error: SUPABASE_SERVICE_ROLE_KEY missing" }, { status: 500 })
+    }
+    
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      return NextResponse.json({ error: "Server configuration error: NEXT_PUBLIC_SUPABASE_URL missing" }, { status: 500 })
     }
 
     const { firstName, email, phone, interest } = await request.json()
@@ -43,8 +49,8 @@ export async function POST(request: Request) {
       if (error.code === "23505") {
         return NextResponse.json({ error: "This email is already on the waitlist" }, { status: 409 })
       }
-      console.error("[v0] Supabase error:", error.message)
-      return NextResponse.json({ error: "Failed to join waitlist" }, { status: 500 })
+      console.error("[v0] Supabase error:", error.code, error.message)
+      return NextResponse.json({ error: `Database error: ${error.message}` }, { status: 500 })
     }
 
     return NextResponse.json({
@@ -54,6 +60,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error("[v0] Waitlist API error:", error)
-    return NextResponse.json({ error: "Failed to process request" }, { status: 500 })
+    return NextResponse.json({ error: `Error: ${error instanceof Error ? error.message : "Unknown error"}` }, { status: 500 })
   }
 }
