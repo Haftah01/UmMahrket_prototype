@@ -14,11 +14,11 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Ibrahim Mohammed",
+    name: "Sanusi Musa",
     role: "Quran Teacher, Ibadan",
     image: "/nigerian-muslim-man-teacher-headshot.jpg",
     quote:
-      "As a Quran tutor, I struggled to find students beyond my mosque. UmMahrket will change everything for educators like me.",
+      "As a Quran tutor, I struggled to find students beyond my mosque. UmMarket will change everything for educators like me.",
     rating: 5,
   },
   {
@@ -45,7 +45,7 @@ export default function Testimonials() {
           <h2 className="font-heading text-3xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
             What Our Community Says
           </h2>
-          <p className="text-lg lg:text-xl text-muted-foreground">Join thousands of Muslims excited about UmMahrket</p>
+          <p className="text-lg lg:text-xl text-muted-foreground">Join thousands of Muslims excited about UmMarket</p>
         </motion.div>
 
         {/* Testimonial Cards */}
