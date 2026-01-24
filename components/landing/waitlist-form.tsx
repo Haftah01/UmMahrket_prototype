@@ -184,7 +184,7 @@ export default function WaitlistForm() {
 
       <p className="text-center text-sm text-muted-foreground flex items-center justify-center gap-2">
         <Lock className="w-4 h-4" />
-        We respect your privacy. 2,000+ Muslims have joined.
+        We respect your privacy. 100+ Muslims have joined.
       </p>
     </form>
   )
