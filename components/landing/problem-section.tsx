@@ -8,7 +8,7 @@ const problems = [
     icon: SearchX,
     title: "Is This Really Halal?",
     description:
-      "You browse Jumia for Islamic apparel but wonder: Is the seller Muslim? Are materials appropriate? Is certification authentic? Every purchase feels like a gamble.",
+      "You browse Online stores for Islamic apparel but wonder: Is the seller Muslim? Are materials appropriate? Is certification authentic? Every purchase feels like a gamble.",
     color: "text-coral",
   },
   {
