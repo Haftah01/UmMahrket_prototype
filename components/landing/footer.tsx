@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <h3 className="font-heading text-2xl font-bold mb-2">UmMarket</h3>
+            <h3 className="font-heading text-2xl font-bold mb-2">UmMarkhet</h3>
             <p className="text-white/60 text-sm">Shop. Connect. Grow.</p>
           </div>
 
