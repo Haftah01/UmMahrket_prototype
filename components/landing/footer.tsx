@@ -57,7 +57,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white/10 text-center">
           <p className="text-white/40 text-sm">
-            &copy; {new Date().getFullYear()} UmMarket. All rights reserved. Made with faith in Nigeria.
+            &copy; {new Date().getFullYear()} UmMarkhet. All rights reserved. Made with faith in Nigeria.
           </p>
         </div>
       </div>
